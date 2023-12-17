@@ -1,23 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import { Routers } from "./router";
+import { createGlobalStyle } from "styled-components";
 
-import { LoginScreen } from "@/screens/AuthStack/Login.screen";
-import { HomeScreen } from "@/screens/HomeStack/Home.screen";
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <LoginScreen />,
-    },
-    {
-        path: "home",
-        element: <HomeScreen />,
-    },
-]);
+const GlobalStyle = createGlobalStyle`
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+`;
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <GlobalStyle />
+        <RouterProvider router={Routers} />
     </React.StrictMode>,
 );

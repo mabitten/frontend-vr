@@ -4,6 +4,16 @@
         "es2021": true
     },
     "extends": ["standard-with-typescript", "plugin:react/recommended", "prettier"],
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx"],
+            "rules": {
+                "@typescript-eslint/no-shadow": ["error"],
+                "no-shadow": "off",
+                "no-undef": "off"
+            }
+        }
+    ],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"

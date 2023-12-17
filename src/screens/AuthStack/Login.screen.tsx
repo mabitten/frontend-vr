@@ -1,6 +1,8 @@
 /**
  * Login Screen
  */
-export const LoginScreen = (): JSX.Element => {
+const LoginScreen = (): JSX.Element => {
     return <div>Login</div>;
 };
+
+export default LoginScreen;
