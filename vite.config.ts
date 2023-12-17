@@ -7,7 +7,11 @@ import path from "node:path";
 export default defineConfig({
     resolve: {
         alias: {
-            "@/screens": path.resolve(__dirname, "./src/screens"),
+            "@": path.resolve(__dirname, "./src/"),
+            assets: path.resolve(__dirname, "./src/assets/"),
+            components: path.resolve(__dirname, "./src/components/"),
+            router: path.resolve(__dirname, "./src/router/"),
+            screens: path.resolve(__dirname, "./src/screens/"),
         },
     },
     plugins: [react()],

@@ -4,6 +4,8 @@ import { RouterProvider } from "react-router-dom";
 import { Routers } from "./router";
 import { createGlobalStyle } from "styled-components";
 
+import "@/assets/translations/translation";
+
 const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;

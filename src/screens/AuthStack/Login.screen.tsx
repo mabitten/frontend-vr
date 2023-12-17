@@ -1,8 +1,10 @@
+import { Column } from "@/components/Container";
+
 /**
  * Login Screen
  */
 const LoginScreen = (): JSX.Element => {
-    return <div>Login</div>;
+    return <Column>Olá</Column>;
 };
 
 export default LoginScreen;
