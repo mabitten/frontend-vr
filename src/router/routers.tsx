@@ -1,14 +1,21 @@
+import { createBrowserRouter } from "react-router-dom";
+import { PrivateRoute } from "./privateRouter";
 import { LoginScreen } from "@/screens/AuthStack";
 import { HomeScreen } from "@/screens/HomeStack";
-import { createBrowserRouter } from "react-router-dom";
 
 export const Routers = createBrowserRouter([
     {
         path: "/",
-        element: <HomeScreen />,
+        element: <LoginScreen />,
     },
     {
-        path: "/login",
-        element: <LoginScreen />,
+        path: "/home",
+        element: <PrivateRoute />,
+        children: [
+            {
+                path: "/home",
+                element: <HomeScreen />,
+            },
+        ],
     },
 ]);

@@ -1,23 +1,46 @@
 import { styled } from "styled-components";
 
-const Row = styled.div`
+type TRowComponent = {
+    children?: JSX.Element | JSX.Element[] | string;
+    mr?: string;
+    ml?: string;
+    mt?: string;
+    mb?: string;
+};
+
+export const RowStyled = styled.div<Omit<TRowComponent, "children">>`
     display: flex;
     flex-direction: Row;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-right: ${(props) => props.mr};
+    margin-left: ${(props) => props.ml};
+    margin-top: ${(props) => props.mt};
+    margin-bottom: ${(props) => props.mb};
 `;
 
-interface IRowComponent {
-    children?: JSX.Element | JSX.Element[] | string;
-}
-
 /**
- * A container to show content as Row.
+ * Componente que representa uma linha flexível.
  *
+ * @param children - Elementos filhos a serem renderizados na linha.
+ * @param mr - Margem à direita.
+ * @param ml - Margem à esquerda.
+ * @param mt - Margem superior.
+ * @param mb - Margem inferior.
  * @returns JSX.Element
  */
-const RowComponent = ({ children }: IRowComponent): JSX.Element => {
-    return <Row>{children}</Row>;
+const RowComponent = ({
+    children,
+    mr = "0",
+    ml = "0",
+    mt = "0",
+    mb = "0",
+}: TRowComponent): JSX.Element => {
+    return (
+        <RowStyled mr={mr} ml={ml} mt={mt} mb={mb}>
+            {children}
+        </RowStyled>
+    );
 };
 
 export default RowComponent;

@@ -1,22 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
-import { Routers } from "./router";
-import { createGlobalStyle } from "styled-components";
-
-import "@/assets/translations/translation";
-
-const GlobalStyle = createGlobalStyle`
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-`;
+import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <GlobalStyle />
-        <RouterProvider router={Routers} />
+        <App />
     </React.StrictMode>,
 );
