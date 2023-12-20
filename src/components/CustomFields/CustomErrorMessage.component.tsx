@@ -1,6 +1,6 @@
 import { useField } from "formik";
 import { StyledText } from "@/components/StyledText";
-import { Column } from "@/components/Container";
+import { Column } from "@/components/Containers";
 
 /**
  * Componente de erro customizado

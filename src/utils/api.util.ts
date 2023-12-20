@@ -12,13 +12,13 @@ type TInstances = {
 const getInstances = (): TInstances => {
     return {
         authInstance: axios.create({
-            baseURL: "https://dummyjson.com",
+            baseURL: import.meta.env.VITE_BASE_URL,
             headers: {
                 "Content-Type": "application/json",
             },
         }),
         instanceRest: axios.create({
-            baseURL: "https://dummyjson.com",
+            baseURL: import.meta.env.VITE_BASE_URL,
             headers: {
                 "Content-Type": "application/json",
             },

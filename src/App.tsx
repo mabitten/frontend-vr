@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
     }
 
+    body {
+        font-family: "Montserrat";
+    }
+
     input {
         margin: 0;
         padding: 0;

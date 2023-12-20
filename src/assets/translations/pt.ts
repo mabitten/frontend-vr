@@ -1,10 +1,13 @@
 export const pt = {
     translation: {
         home: {
-            title: "Home",
+            logout: "Logout",
         },
         login: {
-            title: "Login",
+            button: "Login",
+        },
+        error: {
+            message: "Erro 404 - Essa página não existe",
         },
     },
 };

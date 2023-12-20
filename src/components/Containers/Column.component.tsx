@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
-import { type FlexAlignment } from "@/components/Container/types";
+import { type FlexAlignment } from "@/components/Containers/types";
 
-type TRowComponent = {
-    children?: JSX.Element | JSX.Element[] | string;
+export type TColumnComponent = {
+    children?: JSX.Element | JSX.Element[] | string | string[];
     justifyContent?: FlexAlignment;
     alignItems?: FlexAlignment;
     mr?: string;
@@ -11,9 +11,9 @@ type TRowComponent = {
     mb?: string;
 };
 
-export const RowStyled = styled.div<Omit<TRowComponent, "children">>`
+export const ColumnStyled = styled.div<Omit<TColumnComponent, "children">>`
     display: flex;
-    flex-direction: Row;
+    flex-direction: column;
     align-items: ${(props) => props.alignItems};
     justify-content: ${(props) => props.justifyContent};
     margin-right: ${(props) => props.mr};
@@ -23,7 +23,7 @@ export const RowStyled = styled.div<Omit<TRowComponent, "children">>`
 `;
 
 /**
- * Componente que representa uma linha flexível.
+ * Componente que representa uma coluna flexível.
  *
  * @param children - Elementos filhos a serem renderizados na linha.
  * @param justifyContent Alinhamento principal dos elementos filhos no eixo transversal.
@@ -34,7 +34,7 @@ export const RowStyled = styled.div<Omit<TRowComponent, "children">>`
  * @param mb - Margem inferior.
  * @returns JSX.Element
  */
-const RowComponent = ({
+const ColumnComponent = ({
     children,
     justifyContent = "flex-start",
     alignItems = "flex-start",
@@ -42,9 +42,9 @@ const RowComponent = ({
     ml = "0",
     mt = "0",
     mb = "0",
-}: TRowComponent): JSX.Element => {
+}: TColumnComponent): JSX.Element => {
     return (
-        <RowStyled
+        <ColumnStyled
             justifyContent={justifyContent}
             alignItems={alignItems}
             mr={mr}
@@ -52,8 +52,8 @@ const RowComponent = ({
             mt={mt}
             mb={mb}>
             {children}
-        </RowStyled>
+        </ColumnStyled>
     );
 };
 
-export default RowComponent;
+export default ColumnComponent;

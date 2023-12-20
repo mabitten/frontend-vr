@@ -85,4 +85,7 @@ export type TUserProfileResponse = {
     }>;
 };
 
-export type TUserProfileSanitized = Omit<TSingleUser, "accessToken" | "refreshToken">;
+export type TUserProfileSanitized = Omit<TSingleUser, "accessToken" | "refreshToken"> & {
+    birthDay: string;
+    phone: string;
+};

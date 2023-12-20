@@ -36,5 +36,7 @@ export const sanitizerUserProfile = (response: TUserProfileResponse): TUserProfi
         lastName: users.lastName,
         gender: users.gender,
         image: users.image,
+        birthDay: users.birthDate,
+        phone: users.phone,
     };
 };

@@ -1,7 +1,7 @@
 import { SimpleButton } from "@/components/Buttons";
-import { Card, Column, Row, ScreenContainer } from "@/components/Container";
+import { Card, Column, Row, ScreenContainer } from "@/components/Containers";
 import { CustomInput, ErrorMessage } from "@/components/CustomFields";
-import { Loading } from "@/components/Loading";
+import { Loading } from "@/components/Loadings";
 import { StyledText } from "@/components/StyledText";
 import { useIsLogged, useNormalLogin } from "@/services/hooks";
 import { LoginSchema } from "@/utils";
@@ -80,7 +80,9 @@ const LoginScreen = (): JSX.Element => {
                             <ErrorMessage name="password" />
                         </Column>
                         <Column mt="30px">
-                            <SimpleButton type="submit">Login</SimpleButton>
+                            <SimpleButton type="submit">
+                                <StyledText i18nKey={{ scope: "login.button" }} />
+                            </SimpleButton>
                         </Column>
                     </Form>
                 </Formik>

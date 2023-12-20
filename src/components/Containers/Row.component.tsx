@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
-import { type FlexAlignment } from "@/components/Container/types";
+import { type FlexAlignment } from "@/components/Containers/types";
 
-export type TColumnComponent = {
-    children?: JSX.Element | JSX.Element[] | string | string[];
+type TRowComponent = {
+    children?: JSX.Element | JSX.Element[] | string;
     justifyContent?: FlexAlignment;
     alignItems?: FlexAlignment;
     mr?: string;
@@ -11,9 +11,9 @@ export type TColumnComponent = {
     mb?: string;
 };
 
-export const ColumnStyled = styled.div<Omit<TColumnComponent, "children">>`
+export const RowStyled = styled.div<Omit<TRowComponent, "children">>`
     display: flex;
-    flex-direction: column;
+    flex-direction: Row;
     align-items: ${(props) => props.alignItems};
     justify-content: ${(props) => props.justifyContent};
     margin-right: ${(props) => props.mr};
@@ -23,7 +23,7 @@ export const ColumnStyled = styled.div<Omit<TColumnComponent, "children">>`
 `;
 
 /**
- * Componente que representa uma coluna flexível.
+ * Componente que representa uma linha flexível.
  *
  * @param children - Elementos filhos a serem renderizados na linha.
  * @param justifyContent Alinhamento principal dos elementos filhos no eixo transversal.
@@ -34,7 +34,7 @@ export const ColumnStyled = styled.div<Omit<TColumnComponent, "children">>`
  * @param mb - Margem inferior.
  * @returns JSX.Element
  */
-const ColumnComponent = ({
+const RowComponent = ({
     children,
     justifyContent = "flex-start",
     alignItems = "flex-start",
@@ -42,9 +42,9 @@ const ColumnComponent = ({
     ml = "0",
     mt = "0",
     mb = "0",
-}: TColumnComponent): JSX.Element => {
+}: TRowComponent): JSX.Element => {
     return (
-        <ColumnStyled
+        <RowStyled
             justifyContent={justifyContent}
             alignItems={alignItems}
             mr={mr}
@@ -52,8 +52,8 @@ const ColumnComponent = ({
             mt={mt}
             mb={mb}>
             {children}
-        </ColumnStyled>
+        </RowStyled>
     );
 };
 
-export default ColumnComponent;
+export default RowComponent;

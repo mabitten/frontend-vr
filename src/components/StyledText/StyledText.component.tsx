@@ -12,7 +12,6 @@ type TStyledTextProps = {
 };
 
 const Text = styled.p<Omit<TStyledTextProps, "i18nKey">>`
-    font-family: "Roboto-regular";
     color: ${(props) => props.color};
     font-size: ${(props) => props.size};
 `;
