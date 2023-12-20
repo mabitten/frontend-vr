@@ -1,18 +1,20 @@
 import { SimpleButton } from "@/components/Buttons";
 import { Card, Column, Row, ScreenContainer } from "@/components/Container";
 import { CustomInput, ErrorMessage } from "@/components/CustomFields";
+import { Loading } from "@/components/Loading";
 import { StyledText } from "@/components/StyledText";
 import { useIsLogged, useNormalLogin } from "@/services/hooks";
 import { LoginSchema } from "@/utils";
 import { Field, type FieldProps, Form, Formik } from "formik";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FadeLoader } from "react-spinners";
 
 /**
  * Tela para realizar login atráves de um username e password
  */
 const LoginScreen = (): JSX.Element => {
-    const { mutateAsync: normalLoginMutation, isSuccess } = useNormalLogin();
+    const { mutateAsync: normalLoginMutation, isLoading, isSuccess } = useNormalLogin();
     const { data: isLogged, refetch } = useIsLogged({ enabled: false });
 
     const navigate = useNavigate();
@@ -36,6 +38,7 @@ const LoginScreen = (): JSX.Element => {
 
     return (
         <ScreenContainer justifyContent="center" alignItems="center">
+            <Loading isLoading={isLoading} />
             <Card width="400px">
                 <Row mb="30px">
                     <StyledText size="24px" i18nKey={{ scope: "Login" }} />

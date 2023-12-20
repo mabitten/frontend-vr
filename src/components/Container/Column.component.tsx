@@ -25,9 +25,9 @@ export const ColumnStyled = styled.div<Omit<TColumnComponent, "children">>`
 /**
  * Componente que representa uma coluna flexível.
  *
+ * @param children - Elementos filhos a serem renderizados na linha.
  * @param justifyContent Alinhamento principal dos elementos filhos no eixo transversal.
  * @param alignItems Alinhamento dos elementos filhos no eixo principal.
- * @param children - Elementos filhos a serem renderizados na linha.
  * @param mr - Margem à direita.
  * @param ml - Margem à esquerda.
  * @param mt - Margem superior.

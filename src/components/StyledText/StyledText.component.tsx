@@ -2,8 +2,9 @@ import { useTranslation } from "react-i18next";
 import { styled } from "styled-components";
 
 type TStyledTextProps = {
-    i18nKey: {
-        scope: string;
+    children?: string | number | null | JSX.Element | JSX.Element[];
+    i18nKey?: {
+        scope: string | undefined;
         options?: Record<string, unknown>;
     };
     size?: string;
@@ -22,15 +23,24 @@ const Text = styled.p<Omit<TStyledTextProps, "i18nKey">>`
  * @returns JSX.Element
  */
 const StyledTextComponent = ({
-    i18nKey,
+    children = undefined,
+    i18nKey = { scope: undefined },
     color = "#fff",
     size = "14px",
 }: TStyledTextProps): JSX.Element => {
     const { t } = useTranslation();
 
+    if (i18nKey?.scope) {
+        return (
+            <Text size={size} color={color}>
+                {t(i18nKey.scope, i18nKey?.options)}
+            </Text>
+        );
+    }
+
     return (
         <Text size={size} color={color}>
-            {t(i18nKey.scope, i18nKey?.options)}
+            {children}
         </Text>
     );
 };

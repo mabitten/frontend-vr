@@ -75,10 +75,27 @@ export const getAuthStore = () => {
 };
 
 /**
+ * Remove token e user do local storage
+ */
+export const clearAuthTokens = () => {
+    localStorage.removeItem("@Auth:user");
+    localStorage.removeItem("@Auth:token");
+};
+
+/**
  * Obtem token atual
  */
 export const getAccessToken = () => {
     const token = localStorage.getItem("@Auth:token");
 
     return token ?? "";
+};
+
+/**
+ * Remove todos os dados do usuário no navegador e no app
+ */
+export const clearUser = async () => {
+    clearAuthTokens();
+    await getQueryClient().resetQueries(queryKeys.isLogged);
+    getQueryClient().clear();
 };
