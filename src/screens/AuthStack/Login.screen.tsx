@@ -8,7 +8,6 @@ import { LoginSchema } from "@/utils";
 import { Field, type FieldProps, Form, Formik } from "formik";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FadeLoader } from "react-spinners";
 
 /**
  * Tela para realizar login atráves de um username e password
