@@ -44,7 +44,7 @@ Os testes são escritos em arquivos .test.ts no diretório tests/. Execute
   yarn build `ou` npm run build
 ```
 
-## Internationalization
+## Internacionalização
 
 Usamos [i18next](https://www.i18next.com/) para traduzir o aplicativo em qualquer idioma que desejarmos. Todas as traduções são armazenadas na pasta [assets](/translations).
 
@@ -85,13 +85,13 @@ Componente que serão utilizados apenas em uma única tela, deverá estar na pas
 
 Com a estrutura que temos acima, verifique sempre se está importando do local correto.
 
-&check; _right_:
+&check; _certo_:
 
 ```js
 import { component } from "@components/exampleGroup";
 ```
 
-&cross; _wrong_:
+&cross; _errado_:
 
 ```js
 import { component } from "@components/exampleGroup/children/file.component";
@@ -99,13 +99,13 @@ import { component } from "@components/exampleGroup/children/file.component";
 
 Além disso, nunca importe o padrão de um componente, pois isso permite que você escreva o nome que desejar e, para manter a consistência, devemos sempre importar das exportações nomeadas.
 
-&check; _right_:
+&check; _certo_:
 
 ```js
 import { NomeExato } from "@components/exampleGroup";
 ```
 
-&cross; _wrong_:
+&cross; _errado_:
 
 ```js
 import Qualquer_Nome_Que_Eu_Queira from "@components/exampleGroup";
