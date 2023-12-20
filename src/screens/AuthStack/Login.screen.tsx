@@ -81,7 +81,7 @@ const LoginScreen = (): JSX.Element => {
                         </Column>
                         <Column mt="30px">
                             <SimpleButton type="submit">
-                                <StyledText i18nKey={{ scope: "login.button" }} />
+                                <StyledText color="#000" i18nKey={{ scope: "login.button" }} />
                             </SimpleButton>
                         </Column>
                     </Form>
